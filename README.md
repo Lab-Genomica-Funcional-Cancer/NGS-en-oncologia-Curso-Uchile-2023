@@ -13,3 +13,8 @@ https://www.cancergenomeinterpreter.org/home
 ## 3. Variantes somáticas actionables ##
 ### 3.1 OncoKB ###
 
+## 4. Reporte
+
+Plantilla 
+
+
