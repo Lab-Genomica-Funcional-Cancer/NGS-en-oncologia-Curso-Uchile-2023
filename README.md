@@ -2,35 +2,30 @@
 
 ##  TALLER: Análisis e interpretación de variantes con valor predictivo en oncología. 
 
-Cada grupo se le asignará un VCF con 10 variantes, las cuales, deberan ser anotadas con las  herramientas vistas en clases, que nos permitiran conocer el impacto funcional de cada una.
-El obetivo es identificar aquellas variantes somaticas accionables que podrian tener un impacto en el tratamiento del paciente. A continuación describiremos los pasos a seguir utilizando un VCF de prueba [Taller\_Sample\_161.vcf](https://github.com/Lab-Genomica-Funcional-Cancer/NGS-en-oncologia-Curso-Uchile-2023/blob/main/VCFs/Taller_Sample_161.vcf). 
+Cada grupo se le asignará un VCF con 10 variantes, las cuales, deberan ser anotadas con las  herramientas vistas en el curso, estas nos permitirán conocer el impacto funcional de cada una.
+El objetivo es identificar aquellas variantes somáticas accionables que podrían tener un impacto en el tratamiento del paciente. A continuación describiremos los pasos a seguir utilizando un VCF de prueba [Taller\_Sample\_161.vcf](https://github.com/Lab-Genomica-Funcional-Cancer/NGS-en-oncologia-Curso-Uchile-2023/blob/main/VCFs/Taller_Sample_161.vcf). 
 
 ## Búsqueda de polimorfirmos ##
 
-Los análisis de tumores comúnmente emplean una corrección con un normal emparejado (MN), una muestra de tejido sano del mismo individuo, para distinguir las mutaciones de la línea germinal de las mutaciones somáticas. Dado que se cree que la mayoría de las variantes encontradas en un individuo son comunes dentro de la población,
-
-Por lo tanto, cada vez que no se disponía de una muestra normal compatible (MN) (más comúnmente debido a la falta de fondos o disponibilidad de muestras), los investigadores generalmente confiaban en las bases de datos de mutaciones públicas y/o en un conjunto de genomas internos para filtrar las variantes de la línea germinal.
-
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4561496/#:~:text=Tumor%20analyses%20commonly%20employ%20a,germline%20mutations%20from%20somatic%20mutations.
+En los análisis de tumores comúnmente se secuencia una muestra de tejido sano del mismo individuo, para distinguir las mutaciones de la línea germinal de las mutaciones somáticas. Comúnmente debido al costo o disponibilidad de muestras, se secencia solo la muestra de tumor y 
+para filtrar las mutaciones de la linea germinal se utilizan las bases de datos de variación genética poblacional (Ej: 1000 Genomas, gnomAD, ExAC) y/o en un conjunto de genomas internos para filtrar las variantes. Para este objetivo, utilizaremos la herramienta VEP que permite agregar la anotación 1000 Genomas y gnomAD.
 
 ### VEP (Ensembl Variant Effect Predictor) ###
 
 El VEP es una herramienta que predice los efectos funcionales de las variantes genéticas en las proteínas y los transcriptos del genoma humano. Al ingresar los datos en VEP, los usuarios pueden obtener información sobre los efectos de las variantes, incluyendo información sobre la ubicación en el genoma de referencia, la función y la frecuencia de las variantes en poblaciones.
 
-* VEP - referencia hg19 (utilizar este link)
-[https://grch37.ensembl.org/Homo_sapiens/Tools/VEP?db=core](https://github.com/evelingonzalezfeliu/Tutorial-Ensamble-de-transcriptomas./blob/master/Captura%20de%20Pantalla%202023-05-07%20a%20la(s)%2019.59.10.png?raw=true)
-* VEP - referencia hg38
-[https://www.ensembl.org/Multi/Tools/VEP?db=core](https://github.com/evelingonzalezfeliu/Tutorial-Ensamble-de-transcriptomas./blob/master/Captura%20de%20Pantalla%202023-05-07%20a%20la(s)%2019.59.10.png?raw=true)
+* [VEP - referencia hg19 (utilizar este link)](https://grch37.ensembl.org/Homo_sapiens/Tools/VEP?db=core)
+* [VEP - referencia hg38](ttps://www.ensembl.org/Multi/Tools/VEP?db=core)
 
-**PASO 1**: Cargar el archivo VCF en la página web. OJO: Utilizar VEP assembly GRCh37
+**PASO 1**: Cargar el archivo VCF en la página web. **OJO**: Utilizar VEP assembly GRCh37
 
 ![](https://github.com/evelingonzalezfeliu/Tutorial-Ensamble-de-transcriptomas./blob/master/Captura%20de%20Pantalla%202023-05-07%20a%20la(s)%2019.52.13.png?raw=true)
 
-**PASO 2**: Agregar los identificadores de la lista. Para ver la descripcion de cada uno, situar el mouse sbre el identificador.
+**PASO 2**: Agregar los identificadores de marcados de la lista. Para ver la descripción situar el mouse sobre el identificador.
 
 ![](https://github.com/evelingonzalezfeliu/Tutorial-Ensamble-de-transcriptomas./blob/master/Captura%20de%20Pantalla%202023-05-07%20a%20la(s)%2019.52.51.png?raw=true)
 
-**PASO 3**: Selecionar las bases de datos de 1000 Genomas y gnomAD que se encuentran en la lista, esta anotación nos permitirá saber la frecuencia de las variantes en poblaciones. Aquellas varianciones genéticas que se encuentran en mas de un 1% de la población son polimorfismos.
+**PASO 3**: Selecionar las bases de datos de 1000 Genomas y gnomAD, esta anotación nos permitirá saber la frecuencia de las variantes en diferente poblaciones. Aquellas varianciones genéticas que se encuentran en mas de un 1% de la población son consideradas polimorfismos. De esta manera las descatamos como mutaciones somáticas.
 
 ![](https://github.com/evelingonzalezfeliu/Tutorial-Ensamble-de-transcriptomas./blob/master/Captura%20de%20Pantalla%202023-05-07%20a%20la(s)%2019.53.17.png?raw=true)
 
@@ -38,13 +33,11 @@ El VEP es una herramienta que predice los efectos funcionales de las variantes g
 
 ![](https://github.com/evelingonzalezfeliu/Tutorial-Ensamble-de-transcriptomas./blob/master/Captura%20de%20Pantalla%202023-05-07%20a%20la(s)%2019.59.10.png?raw=true)
 
-**PASO 5**: Ejecutamos el análsis y obtenerdremos informacion funcional de cada variante. Esta puede ser descargada en TXT e importamos la tabla en un archivo Excel para su revisión. 
-CANONICAL 
-AF, AFR\_AF, AMR\_AF,	EAS\_AF, EUR\_AF, SAS\_AF, gnomADe\_XX
-Utilizamos la columnas HGVSc (anotacion ) SYMBOL (nombre del ggen)  y Amino_acids (cambio a nivel de aminoácido) para rellenar la plantilla de reporte clínico.	
+**PASO 5**: Ejecutamos el análsis y obtenedremos la información funcional de cada variante. Descargamos los datos en TXT e importamos la tabla en un archivo Excel para su revisión. 
+En el Excel selecionamos *CANONICAL: YES*. Aquellas variantes con >= 0.01 en algunas de estas columnas (AF, AFR\_AF, AMR\_AF,	EAS\_AF, EUR\_AF, SAS\_AF, gnomADe\_XX) serán consideradas polimorfismos. Para el paso posterior, restamos la columnas *HGVSc*, *SYMBOL* (nombre del gen)  y *Amino_acids* (cambio a nivel de aminoácido) para rellenar la plantilla de reporte clínico.	
 ![](https://github.com/evelingonzalezfeliu/Tutorial-Ensamble-de-transcriptomas./blob/master/Captura%20de%20Pantalla%202023-05-07%20a%20la(s)%2022.12.40.png?raw=true)
 
-**PASO 6**: Aquellas variantes con frecuencia sobre 0.01 en las columnas de 1000 Genomas o gnomAD son clasificadas como polimorfirmos, esta informacion debe ser agregada al reporte clínico.
+**PASO 6**: Aquellas variantes con frecuencia sobre 0.01 en las columnas de 1000 Genomas o gnomAD son clasificadas como polimorfirmos, esta informacion debe ser agregada al reporte clínico. Ejemplo: 
 ![](https://github.com/evelingonzalezfeliu/Tutorial-Ensamble-de-transcriptomas./blob/master/Captura%20de%20Pantalla%202023-05-08%20a%20la(s)%2000.50.33.png?raw=true)
 
 ## Anotación de variantes somáticas ##
