@@ -17,9 +17,9 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4561496/#:~:text=Tumor%20analyses%2
 VEP es una herramienta que predice los efectos funcionales de las variantes genéticas en las proteínas y los transcritos del genoma humano. Al ingresar los datos en VEP, los usuarios pueden obtener información sobre los efectos de las variantes, incluyendo información sobre la ubicación en el genoma de referencia, la función y la frecuencia de las variantes en poblaciones.
 
 * VEP - referencia hg19 (utilizar este link)
-[https://grch37.ensembl.org/Homo_sapiens/Tools/VEP?db=core](https://github.com/evelingonzalezfeliu/Tutorial-Ensamble-de-transcriptomas./blob/master/Captura%20de%20Pantalla%202023-05-07%20a%20la(s)%2019.59.10.png?raw=true)
+[https://grch37.ensembl.org/Homo_sapiens/Tools/VEP?db=core](https://grch37.ensembl.org/Homo_sapiens/Tools/VEP?db=core)
 * VEP - referencia hg38
-[https://www.ensembl.org/Multi/Tools/VEP?db=core](https://github.com/evelingonzalezfeliu/Tutorial-Ensamble-de-transcriptomas./blob/master/Captura%20de%20Pantalla%202023-05-07%20a%20la(s)%2019.59.10.png?raw=true)
+[https://www.ensembl.org/Multi/Tools/VEP?db=core](https://www.ensembl.org/Multi/Tools/VEP?db=core)
 
 **PASO 1**: Cargar el archivo VCF en la página web. OJO: Utilizar VEP assembly GRCh37
 
