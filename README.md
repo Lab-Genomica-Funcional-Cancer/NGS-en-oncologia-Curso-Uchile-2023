@@ -5,7 +5,7 @@
 Cada grupo se le asignará un VCF con 10 variantes, las cuales, deberan ser anotadas con las  herramientas vistas en el curso, estas nos permitirán conocer el impacto funcional de cada una.
 El objetivo es identificar aquellas mutaciones somáticas accionables que podrían tener un impacto en el tratamiento del paciente. A continuación describiremos los pasos a seguir utilizando un VCF de prueba [Taller\_Sample\_161.vcf](https://github.com/Lab-Genomica-Funcional-Cancer/NGS-en-oncologia-Curso-Uchile-2023/blob/main/VCFs/Taller_Sample_161.vcf). 
 
-## Búsqueda de polimorfirmos ##
+## Búsqueda de polimorfismos ##
 
 En los análisis de tumores comúnmente se secuencia una muestra de tejido sano del mismo individuo, para distinguir las mutaciones de la línea germinal de las mutaciones somáticas. Comúnmente debido al costo o a la disponibilidad de muestras, en algunos centros solo la muestra tumoral es secuenciada y para filtrar las mutaciones de la línea germinal se utilizan las bases de datos de variación genética poblacional (Ej: 1000 Genomas, gnomAD, ExAC) y/o un conjunto de genomas internos para filtrar las variantes. Para realizar este objetivo, utilizaremos la herramienta VEP que permite agregar la anotación 1000 Genomas y gnomAD.
 
