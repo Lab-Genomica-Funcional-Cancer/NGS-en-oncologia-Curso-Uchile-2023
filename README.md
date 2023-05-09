@@ -29,6 +29,7 @@ VEP es una herramienta que permite anotar los efectos funcionales de las variant
 ![](https://github.com/evelingonzalezfeliu/Tutorial-Ensamble-de-transcriptomas./blob/master/Captura%20de%20Pantalla%202023-05-07%20a%20la(s)%2019.53.17.png?raw=true)
 
 **PASO 4**: A los parámetros ya seleccionados, agregamos la identificación del transcrito canónico. 
+Finalmente, hacemos click en el botón verde (RUN) para comenzar la anotación con VEP.
 
 ![](https://github.com/evelingonzalezfeliu/Tutorial-Ensamble-de-transcriptomas./blob/master/Captura%20de%20Pantalla%202023-05-07%20a%20la(s)%2019.59.10.png?raw=true)
 
